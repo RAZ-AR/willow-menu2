@@ -10,7 +10,6 @@ class MenuApp {
         this.currentCategory = 'all';
         this.menuItems = [];
         this.autoRefreshInterval = null;
-        this.isMenuOpen = false;
         this.init();
     }
 
@@ -210,21 +209,6 @@ class MenuApp {
         }
     }
     
-    toggleMenu() {
-        const menuCategories = document.getElementById('menuCategories');
-        const menuToggleBtn = document.querySelector('.menu-toggle-btn');
-        
-        this.isMenuOpen = !this.isMenuOpen;
-        
-        if (this.isMenuOpen) {
-            menuCategories.classList.remove('hidden');
-            menuToggleBtn.classList.add('active');
-        } else {
-            menuCategories.classList.add('hidden');
-            menuToggleBtn.classList.remove('active');
-        }
-    }
-
     async refreshMenu(showLoading = true) {
         if (showLoading) {
             document.getElementById('loading').style.display = 'block';

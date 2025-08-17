@@ -148,34 +148,6 @@ body {
     transform: rotate(90deg);
 }
 
-.menu-toggle-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.menu-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-.menu-toggle-btn svg {
-    transition: transform 0.3s ease;
-}
-
-.menu-toggle-btn.active svg {
-    transform: rotate(180deg);
-}
-
 .language-switcher {
     display: flex;
     gap: 10px;
@@ -241,11 +213,6 @@ body {
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 3rem;
-    transition: all 0.3s ease;
-}
-
-.menu-categories.hidden {
-    display: none;
 }
 
 .category-btn {
