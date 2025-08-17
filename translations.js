@@ -16,7 +16,10 @@ const translations = {
             sweets: "Sweets"
         },
         loading: "Loading menu...",
-        currency: "RSD"
+        currency: "RSD",
+        menu: {
+            toggle: "Menu"
+        }
     },
     ru: {
         hero: {
@@ -35,7 +38,10 @@ const translations = {
             sweets: "Сладости"
         },
         loading: "Загрузка меню...",
-        currency: "RSD"
+        currency: "RSD",
+        menu: {
+            toggle: "Меню"
+        }
     },
     sr: {
         hero: {
@@ -54,7 +60,10 @@ const translations = {
             sweets: "Слаткиши"
         },
         loading: "Учитавање менија...",
-        currency: "RSD"
+        currency: "RSD",
+        menu: {
+            toggle: "Мени"
+        }
     }
 };
 
