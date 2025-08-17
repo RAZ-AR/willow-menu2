@@ -33,30 +33,24 @@
 
     <header class="header">
         <div class="container">
-            <div class="header-top">
+            <div class="header-content">
                 <div class="logo">
                     <img src="logo.svg" alt="Willow" class="logo-img">
                 </div>
-                <div class="header-controls">
+                <div class="header-right">
                     <div class="language-switcher">
                         <button class="lang-btn active" data-lang="en">EN</button>
                         <button class="lang-btn" data-lang="ru">RU</button>
                         <button class="lang-btn" data-lang="sr">SR</button>
                     </div>
-                    <button class="menu-toggle" onclick="menuApp.toggleMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
                 </div>
             </div>
         </div>
     </header>
-    
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-content">
-            <button class="close-btn" onclick="menuApp.toggleMenu()">&times;</button>
-            <div class="menu-categories">
+
+    <main class="main">
+        <div class="container">
+            <nav class="category-nav">
                 <button class="category-btn active" data-category="all" data-translate="categories.all">All Items</button>
                 <button class="category-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
                 <button class="category-btn" data-category="bar" data-translate="categories.bar">Bar</button>
@@ -66,30 +60,11 @@
                 <button class="category-btn" data-category="beverages" data-translate="categories.beverages">Beverages</button>
                 <button class="category-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
                 <button class="category-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
-            </div>
-            <button class="refresh-btn" onclick="menuApp.refreshMenu()" data-translate="refresh">Refresh Menu</button>
-        </div>
-    </nav>
-
-    <main class="main">
-        <div class="container">
-            <div class="menu-header">
-                <h1 class="menu-title">Menu</h1>
-                <div class="category-filter desktop-only">
-                    <button class="filter-btn active" data-category="all" data-translate="categories.all">All Items</button>
-                    <button class="filter-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
-                    <button class="filter-btn" data-category="bar" data-translate="categories.bar">Bar</button>
-                    <button class="filter-btn" data-category="whisky" data-translate="categories.whisky">Whisky</button>
-                    <button class="filter-btn" data-category="wine" data-translate="categories.wine">Wine</button>
-                    <button class="filter-btn" data-category="prosecco" data-translate="categories.prosecco">Prosecco</button>
-                    <button class="filter-btn" data-category="beverages" data-translate="categories.beverages">Beverages</button>
-                    <button class="filter-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
-                    <button class="filter-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
-                </div>
-            </div>
+                <button class="refresh-btn" onclick="menuApp.refreshMenu()" title="Refresh Menu">⟲</button>
+            </nav>
             
             <section class="menu-content">
-                <div class="menu-grid" id="menuGrid">
+                <div class="menu-list" id="menuGrid">
                     <!-- Menu items will be loaded here -->
                 </div>
                 
@@ -100,8 +75,6 @@
             </section>
         </div>
     </main>
-    
-    <div class="overlay" id="overlay" onclick="menuApp.toggleMenu()"></div>
 
     <footer class="footer">
         <div class="container">

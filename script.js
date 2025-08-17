@@ -30,14 +30,10 @@ class MenuApp {
             });
         });
 
-        // Category filter - both sidebar and desktop
-        document.querySelectorAll('.category-btn, .filter-btn').forEach(btn => {
+        // Category filter
+        document.querySelectorAll('.category-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 this.filterByCategory(e.target.dataset.category);
-                // Close sidebar on mobile after selection
-                if (window.innerWidth <= 768 && this.isMenuOpen) {
-                    this.toggleMenu();
-                }
             });
         });
     }
@@ -71,13 +67,13 @@ class MenuApp {
     filterByCategory(category) {
         this.currentCategory = category;
         
-        // Update active button for both sidebar and desktop
-        document.querySelectorAll('.category-btn, .filter-btn').forEach(btn => {
+        // Update active button
+        document.querySelectorAll('.category-btn').forEach(btn => {
             btn.classList.remove('active');
         });
         
         document.querySelectorAll(`[data-category="${category}"]`).forEach(btn => {
-            if (btn.classList.contains('category-btn') || btn.classList.contains('filter-btn')) {
+            if (btn.classList.contains('category-btn')) {
                 btn.classList.add('active');
             }
         });
@@ -119,21 +115,20 @@ class MenuApp {
     }
 
     renderMenu() {
-        const menuGrid = document.getElementById('menuGrid');
+        const menuList = document.getElementById('menuGrid');
         const filteredItems = this.getFilteredItems();
         
-        menuGrid.innerHTML = '';
+        menuList.innerHTML = '';
         
         filteredItems.forEach(item => {
             const menuItemElement = this.createMenuItemElement(item);
-            menuGrid.appendChild(menuItemElement);
+            menuList.appendChild(menuItemElement);
         });
         
         // Add animation delay for staggered entrance
-        const items = menuGrid.querySelectorAll('.menu-item');
+        const items = menuList.querySelectorAll('.menu-item');
         items.forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.1}s`;
-            item.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            item.style.animationDelay = `${index * 0.05}s`;
         });
     }
 
@@ -237,23 +232,8 @@ class MenuApp {
     }
     
     toggleMenu() {
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
-        const menuToggle = document.querySelector('.menu-toggle');
-        
-        this.isMenuOpen = !this.isMenuOpen;
-        
-        if (this.isMenuOpen) {
-            sidebar.classList.add('open');
-            overlay.classList.add('show');
-            if (menuToggle) menuToggle.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        } else {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('show');
-            if (menuToggle) menuToggle.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        // Menu toggle not needed in new design
+        console.log('Menu toggle called - not needed in new design');
     }
 
     async refreshMenu(showLoading = true) {
@@ -354,7 +334,7 @@ style.textContent = `
     }
     
     .menu-item {
-        opacity: 0;
+        opacity: 1;
     }
 `;
 document.head.appendChild(style);
