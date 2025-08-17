@@ -158,7 +158,6 @@ class MenuApp {
         
         div.innerHTML = `
             <div class="menu-item-image">
-                ${icon}
             </div>
             <div class="menu-item-content">
                 <div class="menu-item-header">
