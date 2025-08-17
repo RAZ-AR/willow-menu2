@@ -1,0 +1,21 @@
+# Конфигурация для setup.sh скрипта
+# Отредактируйте эти значения перед запуском (опционально)
+
+# GitHub настройки
+GITHUB_USERNAME=your-username
+REPO_NAME=willow-menu
+
+# Git настройки
+GIT_NAME=Your Name
+GIT_EMAIL=your.email@example.com
+
+# Дополнительные опции
+OPEN_BROWSER_AFTER_SETUP=true
+CREATE_BACKUP=true
+
+# URLs для обновления (автоматически заменятся)
+SITE_URL=https://your-username.github.io/willow-menu/
+REPO_URL=https://github.com/your-username/willow-menu
+
+# Google Sheets (уже настроено)
+GOOGLE_SHEETS_ID=1BRQuzea6bba0NxxPk9koLSzpHkfiAzrKmwDa8ow7128

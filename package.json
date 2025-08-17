@@ -1,0 +1,30 @@
+{
+  "name": "willow-cafe-menu",
+  "version": "1.0.0",
+  "description": "Willow Cafe multilingual menu with live Google Sheets integration and liquid glass design",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx live-server",
+    "test": "echo \"Open test.html to test Google Sheets integration\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/willow-menu.git"
+  },
+  "keywords": [
+    "cafe",
+    "menu",
+    "multilingual",
+    "google-sheets",
+    "liquid-glass",
+    "responsive",
+    "vanilla-js"
+  ],
+  "author": "Willow Cafe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/willow-menu/issues"
+  },
+  "homepage": "https://your-username.github.io/willow-menu/"
+}

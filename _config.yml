@@ -1,0 +1,23 @@
+# GitHub Pages configuration
+title: Willow Cafe Menu
+description: Exquisite coffee & cuisine experience with multilingual menu
+url: "https://your-username.github.io"
+baseurl: "/willow-menu"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - GOOGLE_SHEETS_SETUP.md
+  - INTEGRATION_STATUS.md
+  - test.html
+  - package.json
+  - .gitignore
+  - .github/
+
+# Include files
+include:
+  - _redirects

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Willow Cafe - Exquisite coffee & cuisine experience. Multilingual menu with live updates from Google Sheets.">
+    <meta name="keywords" content="willow cafe, coffee, menu, restaurant, multilingual, google sheets">
+    <meta name="author" content="Willow Cafe">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/willow-menu/">
+    <meta property="og:title" content="Willow Cafe - Menu">
+    <meta property="og:description" content="Exquisite coffee & cuisine experience with multilingual menu">
+    <meta property="og:image" content="https://your-username.github.io/willow-menu/logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-username.github.io/willow-menu/">
+    <meta property="twitter:title" content="Willow Cafe - Menu">
+    <meta property="twitter:description" content="Exquisite coffee & cuisine experience with multilingual menu">
+    <meta property="twitter:image" content="https://your-username.github.io/willow-menu/logo.svg">
+
+    <title>Willow Cafe - Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+<body>
+    <div class="background-container">
+        <div class="liquid-background"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Willow Cafe" class="logo-img">
+            </div>
+            <nav class="nav">
+                <div class="header-controls">
+                    <button class="refresh-btn" onclick="menuApp.refreshMenu()" title="Refresh Menu">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 10 18.995 7.26822 17.3662 5.63824C15.7373 4.00827 13.4864 3 11 3C6.02944 3 2 7.02944 2 12C2 16.9706 6.02944 21 11 21C15.1031 21 18.5649 18.2543 19.6482 14.5M21 10V4M21 10H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                        <button class="lang-btn" data-lang="sr">SR</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero-title" data-translate="hero.title">Welcome to Willow</h1>
+                <p class="hero-subtitle" data-translate="hero.subtitle">Exquisite coffee & cuisine experience</p>
+            </section>
+
+            <section class="menu-section">
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="all" data-translate="categories.all">All</button>
+                    <button class="category-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
+                    <button class="category-btn" data-category="bar" data-translate="categories.bar">Bar</button>
+                    <button class="category-btn" data-category="whisky" data-translate="categories.whisky">Whisky</button>
+                    <button class="category-btn" data-category="wine" data-translate="categories.wine">Wine</button>
+                    <button class="category-btn" data-category="prosecco" data-translate="categories.prosecco">Prosecco</button>
+                    <button class="category-btn" data-category="beverages" data-translate="categories.beverages">Beverages</button>
+                    <button class="category-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
+                    <button class="category-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Menu items will be loaded here -->
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p data-translate="loading">Loading menu...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Willow Cafe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="menu-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
