@@ -211,16 +211,16 @@ class MenuApp {
     }
     
     toggleMenu() {
-        const menuCategories = document.getElementById('menuCategories');
+        const headerCategories = document.querySelector('.header-categories');
         const menuToggleBtn = document.querySelector('.menu-toggle-btn');
         
         this.isMenuOpen = !this.isMenuOpen;
         
         if (this.isMenuOpen) {
-            menuCategories.classList.remove('hidden');
+            headerCategories.classList.add('show');
             menuToggleBtn.classList.add('active');
         } else {
-            menuCategories.classList.add('hidden');
+            headerCategories.classList.remove('show');
             menuToggleBtn.classList.remove('active');
         }
     }

@@ -43,10 +43,9 @@
                             <path d="M21 10C21 10 18.995 7.26822 17.3662 5.63824C15.7373 4.00827 13.4864 3 11 3C6.02944 3 2 7.02944 2 12C2 16.9706 6.02944 21 11 21C15.1031 21 18.5649 18.2543 19.6482 14.5M21 10V4M21 10H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <button class="menu-toggle-btn" onclick="menuApp.toggleMenu()" data-translate="menu.toggle">
-                        Menu
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <button class="menu-toggle-btn" onclick="menuApp.toggleMenu()" title="Toggle Menu">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                     <div class="language-switcher">
@@ -57,15 +56,9 @@
                 </div>
             </nav>
         </div>
-    </header>
-
-    <main class="main">
-        <div class="container">
-            <section class="hero">
-            </section>
-
-            <section class="menu-section">
-                <div class="menu-categories hidden" id="menuCategories">
+        <div class="header-categories">
+            <div class="container">
+                <div class="menu-categories" id="menuCategories">
                     <button class="category-btn active" data-category="all" data-translate="categories.all">All</button>
                     <button class="category-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
                     <button class="category-btn" data-category="bar" data-translate="categories.bar">Bar</button>
@@ -76,6 +69,16 @@
                     <button class="category-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
                     <button class="category-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
                 </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+            </section>
+
+            <section class="menu-section">
 
                 <div class="menu-grid" id="menuGrid">
                     <!-- Menu items will be loaded here -->

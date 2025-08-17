@@ -252,12 +252,13 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 8px 16px;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .category-btn:hover,
@@ -391,24 +392,26 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .menu-categories {
-        gap: 8px;
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    
-    .menu-categories::-webkit-scrollbar {
+    .header-categories {
         display: none;
     }
     
+    .header-categories.show {
+        display: block;
+    }
+    
+    .menu-categories {
+        flex-direction: column;
+        gap: 8px;
+        padding: 1rem 0;
+    }
+    
     .category-btn {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        white-space: nowrap;
-        flex-shrink: 0;
+        padding: 12px 20px;
+        font-size: 16px;
+        text-align: left;
+        justify-content: flex-start;
+        border-radius: 8px;
     }
     
     .menu-item {
