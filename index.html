@@ -23,7 +23,7 @@
 
     <title>Willow Cafe - Menu</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
 </head>
 <body>
@@ -33,57 +33,66 @@
 
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <img src="logo.svg" alt="Willow Cafe" class="logo-img">
-            </div>
-            <nav class="nav">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="logo.svg" alt="Willow" class="logo-img">
+                </div>
                 <div class="header-controls">
-                    <button class="refresh-btn" onclick="menuApp.refreshMenu()" title="Refresh Menu">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 10C21 10 18.995 7.26822 17.3662 5.63824C15.7373 4.00827 13.4864 3 11 3C6.02944 3 2 7.02944 2 12C2 16.9706 6.02944 21 11 21C15.1031 21 18.5649 18.2543 19.6482 14.5M21 10V4M21 10H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="menu-toggle-btn" onclick="menuApp.toggleMenu()" title="Toggle Menu">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
                     <div class="language-switcher">
                         <button class="lang-btn active" data-lang="en">EN</button>
                         <button class="lang-btn" data-lang="ru">RU</button>
                         <button class="lang-btn" data-lang="sr">SR</button>
                     </div>
-                </div>
-            </nav>
-        </div>
-        <div class="header-categories">
-            <div class="container">
-                <div class="menu-categories" id="menuCategories">
-                    <button class="category-btn active" data-category="all" data-translate="categories.all">All</button>
-                    <button class="category-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
-                    <button class="category-btn" data-category="bar" data-translate="categories.bar">Bar</button>
-                    <button class="category-btn" data-category="whisky" data-translate="categories.whisky">Whisky</button>
-                    <button class="category-btn" data-category="wine" data-translate="categories.wine">Wine</button>
-                    <button class="category-btn" data-category="prosecco" data-translate="categories.prosecco">Prosecco</button>
-                    <button class="category-btn" data-category="beverages" data-translate="categories.beverages">Beverages</button>
-                    <button class="category-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
-                    <button class="category-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
+                    <button class="menu-toggle" onclick="menuApp.toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
     </header>
+    
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <button class="close-btn" onclick="menuApp.toggleMenu()">&times;</button>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all" data-translate="categories.all">All Items</button>
+                <button class="category-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
+                <button class="category-btn" data-category="bar" data-translate="categories.bar">Bar</button>
+                <button class="category-btn" data-category="whisky" data-translate="categories.whisky">Whisky</button>
+                <button class="category-btn" data-category="wine" data-translate="categories.wine">Wine</button>
+                <button class="category-btn" data-category="prosecco" data-translate="categories.prosecco">Prosecco</button>
+                <button class="category-btn" data-category="beverages" data-translate="categories.beverages">Beverages</button>
+                <button class="category-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
+                <button class="category-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
+            </div>
+            <button class="refresh-btn" onclick="menuApp.refreshMenu()" data-translate="refresh">Refresh Menu</button>
+        </div>
+    </nav>
 
     <main class="main">
         <div class="container">
-            <section class="hero">
-            </section>
-
-            <section class="menu-section">
-
+            <div class="menu-header">
+                <h1 class="menu-title">Menu</h1>
+                <div class="category-filter desktop-only">
+                    <button class="filter-btn active" data-category="all" data-translate="categories.all">All Items</button>
+                    <button class="filter-btn" data-category="coffee" data-translate="categories.coffee">Coffee</button>
+                    <button class="filter-btn" data-category="bar" data-translate="categories.bar">Bar</button>
+                    <button class="filter-btn" data-category="whisky" data-translate="categories.whisky">Whisky</button>
+                    <button class="filter-btn" data-category="wine" data-translate="categories.wine">Wine</button>
+                    <button class="filter-btn" data-category="prosecco" data-translate="categories.prosecco">Prosecco</button>
+                    <button class="filter-btn" data-category="beverages" data-translate="categories.beverages">Beverages</button>
+                    <button class="filter-btn" data-category="sandwiches" data-translate="categories.sandwiches">Sandwiches</button>
+                    <button class="filter-btn" data-category="sweets" data-translate="categories.sweets">Sweets</button>
+                </div>
+            </div>
+            
+            <section class="menu-content">
                 <div class="menu-grid" id="menuGrid">
                     <!-- Menu items will be loaded here -->
                 </div>
-
+                
                 <div class="loading" id="loading">
                     <div class="loading-spinner"></div>
                     <p data-translate="loading">Loading menu...</p>
@@ -91,6 +100,8 @@
             </section>
         </div>
     </main>
+    
+    <div class="overlay" id="overlay" onclick="menuApp.toggleMenu()"></div>
 
     <footer class="footer">
         <div class="container">

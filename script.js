@@ -30,10 +30,14 @@ class MenuApp {
             });
         });
 
-        // Category filter
-        document.querySelectorAll('.category-btn').forEach(btn => {
+        // Category filter - both sidebar and desktop
+        document.querySelectorAll('.category-btn, .filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 this.filterByCategory(e.target.dataset.category);
+                // Close sidebar on mobile after selection
+                if (window.innerWidth <= 768 && this.isMenuOpen) {
+                    this.toggleMenu();
+                }
             });
         });
     }
@@ -67,13 +71,17 @@ class MenuApp {
     filterByCategory(category) {
         this.currentCategory = category;
         
-        // Update active category button
-        document.querySelectorAll('.category-btn').forEach(btn => {
+        // Update active button for both sidebar and desktop
+        document.querySelectorAll('.category-btn, .filter-btn').forEach(btn => {
             btn.classList.remove('active');
         });
-        document.querySelector(`[data-category="${category}"]`).classList.add('active');
         
-        // Re-render menu with filter
+        document.querySelectorAll(`[data-category="${category}"]`).forEach(btn => {
+            if (btn.classList.contains('category-btn') || btn.classList.contains('filter-btn')) {
+                btn.classList.add('active');
+            }
+        });
+        
         this.renderMenu();
     }
 
@@ -138,16 +146,34 @@ class MenuApp {
         const volume = item.volume ? `${item.volume}` : '';
         const composition = item.composition || '';
         
+        // Category-based icons
+        const categoryIcons = {
+            coffee: '☕',
+            bar: '🍹',
+            whisky: '🥃',
+            wine: '🍷',
+            prosecco: '🥂',
+            beverages: '🥤',
+            sandwiches: '🥪',
+            sweets: '🧁'
+        };
+        const icon = categoryIcons[item.category.toLowerCase()] || '🍽️';
+        
+        div.setAttribute('data-category', item.category.toLowerCase());
+        
         div.innerHTML = `
-            <div class="menu-item-category">${categoryName}</div>
-            <div class="menu-item-header">
-                <div>
-                    <div class="menu-item-name">${itemName}</div>
-                    ${volume ? `<div class="menu-item-volume">${volume}</div>` : ''}
-                </div>
-                <div class="menu-item-price">${item.price} ${translations[this.currentLang].currency}</div>
+            <div class="menu-item-image">
+                ${icon}
             </div>
-            ${composition ? `<div class="menu-item-composition">${composition}</div>` : ''}
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">${itemName}</h3>
+                    <span class="menu-item-price">${item.price} ${translations[this.currentLang].currency}</span>
+                </div>
+                ${composition ? `<p class="menu-item-description">${composition}</p>` : ''}
+                ${volume ? `<p class="menu-item-description">${volume}</p>` : ''}
+                <span class="menu-item-category">${categoryName}</span>
+            </div>
         `;
         
         return div;
@@ -211,17 +237,22 @@ class MenuApp {
     }
     
     toggleMenu() {
-        const headerCategories = document.querySelector('.header-categories');
-        const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const menuToggle = document.querySelector('.menu-toggle');
         
         this.isMenuOpen = !this.isMenuOpen;
         
         if (this.isMenuOpen) {
-            headerCategories.classList.add('show');
-            menuToggleBtn.classList.add('active');
+            sidebar.classList.add('open');
+            overlay.classList.add('show');
+            if (menuToggle) menuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
         } else {
-            headerCategories.classList.remove('show');
-            menuToggleBtn.classList.remove('active');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+            if (menuToggle) menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
         }
     }
 

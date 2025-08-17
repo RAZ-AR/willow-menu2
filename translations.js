@@ -5,7 +5,7 @@ const translations = {
             subtitle: "Exquisite coffee & cuisine experience"
         },
         categories: {
-            all: "All",
+            all: "All Items",
             coffee: "Coffee",
             bar: "Bar",
             whisky: "Whisky",
@@ -19,7 +19,8 @@ const translations = {
         currency: "RSD",
         menu: {
             toggle: "Menu"
-        }
+        },
+        refresh: "Refresh Menu"
     },
     ru: {
         hero: {
@@ -27,7 +28,7 @@ const translations = {
             subtitle: "Изысканный кофе и кулинарный опыт"
         },
         categories: {
-            all: "Все",
+            all: "Все позиции",
             coffee: "Кофе",
             bar: "Бар",
             whisky: "Виски",
@@ -41,7 +42,8 @@ const translations = {
         currency: "RSD",
         menu: {
             toggle: "Меню"
-        }
+        },
+        refresh: "Обновить меню"
     },
     sr: {
         hero: {
@@ -49,7 +51,7 @@ const translations = {
             subtitle: "Изузетно кафе и кулинарско искуство"
         },
         categories: {
-            all: "Све",
+            all: "Све ставке",
             coffee: "Кафа",
             bar: "Бар",
             whisky: "Виски",
@@ -63,7 +65,8 @@ const translations = {
         currency: "RSD",
         menu: {
             toggle: "Мени"
-        }
+        },
+        refresh: "Освежи мени"
     }
 };
 
